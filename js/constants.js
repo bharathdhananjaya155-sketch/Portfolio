@@ -28,7 +28,7 @@ const APP_DATA = {
             title: "Quiz Master",
             description: "The Quiz Application is a backend-driven system designed to manage quiz creation, question retrieval, and score evaluation efficiently. I developed RESTful APIs using Spring Boot, enabling functionalities such as adding quizzes, fetching questions, and calculating scores. The application follows a layered MVC architecture, ensuring clean code organization and scalability. MySQL was used to store quiz data and user scores.",
             tech: ["SpringBoot", "Rest Api", "Js", "MySql"],
-            link: "https://heartfelt-gumption-234c58.netlify.app/",
+            link: "https://quiz-master-17.netlify.app/",
             image: "images/project3.png"
         }
     ],
