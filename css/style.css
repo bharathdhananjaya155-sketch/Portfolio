@@ -1,0 +1,438 @@
+/* Basic Constants */
+:root {
+    --bg-start: #1a0f3f;
+    --bg-end: #2b1056;
+    --bg-bottom-start: #43125f;
+    --bg-bottom-end: #4b1c73;
+    --text-color: #e0e0e0;
+    --accent-color: #00bcd4;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(180deg, var(--bg-start), var(--bg-end) 50%, var(--bg-bottom-start), var(--bg-bottom-end));
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Plus Pattern Overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-start);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--glass-border);
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50% 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Navbar */
+#navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 15, 63, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Sections General */
+section {
+    padding: 6rem 2rem;
+    min-height: auto;
+    /* changed from 100vh to fit content better */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2rem;
+}
+
+.hero-left {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-left h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-left h2 {
+    font-size: 1.8rem;
+    color: #bfaee3;
+    /* Lighter shade of purple context */
+    margin-bottom: 1.5rem;
+}
+
+.hero-left p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+    max-width: 500px;
+}
+
+/* Code Editor Window */
+.code-editor {
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.editor-header {
+    background: #252526;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    margin-right: 15px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.file-name {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.editor-body {
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+    color: #d4d4d4;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background: #1e1e1eBB;
+    /* Slight transparency */
+}
+
+/* Cursor Blink */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--accent-color);
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Liquid Glass Button */
+.glass-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.glass-btn:hover::before {
+    left: 100%;
+}
+
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px var(--accent-color);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+}
+
+.project-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Skills */
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+.skill-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-chip:hover {
+    background: rgba(0, 188, 212, 0.2);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.skill-chip i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.5);
+    border-top: 1px solid #333;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        /* Code editor on top or bottom? Standard is text top. Let's stack naturally */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-left p {
+        margin: 0 auto 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}

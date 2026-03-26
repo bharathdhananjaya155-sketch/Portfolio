@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <h1>Hi, I'm <span id="hero-name"></span></h1>
+                <h2 id="hero-role"></h2>
+                <p id="hero-intro"></p>
+                <a href="Bharath_Resume (1).pdf" id="resume-btn" class="glass-btn" download>Download Resume</a>
+            </div>
+            <div class="hero-right">
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <div class="file-name">about_me.js</div>
+                    </div>
+                    <div class="editor-body">
+                        <pre><code id="code-content"></code><span class="cursor">|</span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid" id="projects-container">
+            <!-- Projects injected via JS -->
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline" id="experience-container">
+            <!-- Experience injected via JS -->
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-flex" id="skills-container">
+            <!-- Skills injected via JS -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info" id="contact-container">
+            <!-- Contact info injected via JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 <span id="footer-name"></span>. All rights reserved.</p>
+    </footer>
+
+    <script src="js/constants.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
