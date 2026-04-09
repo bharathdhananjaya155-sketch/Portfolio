@@ -3,7 +3,7 @@ const APP_DATA = {
     name: "Bharath D",
     role: "Full Stack Developer",
     introduction: "I’m a Full Stack Java Developer with a strong foundation in building scalable and user-centric web applications using Spring Boot, REST APIs, and modern frontend technologies. I recently graduated in Computer Science (VTU, 2025) and gained hands-on industry experience during my internship at Eunoia Labs, where I worked on real-world full stack workflows.",
-    resumeLink: "Bharath_D_Resume_3.pdf",
+    resumeLink: "MyResume.pdf",
     socialLinks: {
         email: "bharathdhananjaya155@gmail.com",
         linkedin: "https://linkedin.com/in/bharath-d-7a196a353",
@@ -14,7 +14,7 @@ const APP_DATA = {
             title: "Resume Builder",
             description: "The Resume Builder is a full-stack web application that enables users to create, customize, and manage professional resumes dynamically. I developed the backend using Spring Boot, where I designed RESTful APIs to handle various sections of resume data such as education, skills, and work experience. The application uses MySQL for persistent data storage and follows a structured layered architecture to ensure scalability and maintainability.",
             tech: ["SpringBoot", "Rest Api", "React", "MySql"],
-            link: "https://resume-builder-frontend-0y6j.onrender.com/",
+            link: "https://my-resume-builder-17.netlify.app/",
             image: "images/project1.png"
         },
         {
